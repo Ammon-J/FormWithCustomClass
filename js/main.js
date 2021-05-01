@@ -27,6 +27,17 @@ function addVideoGame() {
     }
 }
 function displayGame(myGame) {
+    var displayDiv = getById("display");
+    var gameHeading = document.createElement("h2");
+    gameHeading.innerText = myGame.title;
+    displayDiv.appendChild(gameHeading);
+    var GameInfo = document.createElement("p");
+    var gameMediumDisplay = "";
+    if (!myGame.isDigitalOnly) {
+        gameMediumDisplay = "not";
+    }
+    GameInfo.innerText = myGame.title + " has a rating of " + myGame.rating + ". It costs $" + myGame.price.toFixed(2) + ". \n    It is " + gameMediumDisplay + " digital only.";
+    displayDiv.appendChild(GameInfo);
 }
 function isAllDataValid() {
     return true;
