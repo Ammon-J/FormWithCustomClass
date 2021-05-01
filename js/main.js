@@ -39,6 +39,7 @@ function displayGame(myGame) {
     displayDiv.appendChild(GameInfo);
 }
 function isAllDataValid() {
+    clearErrorSpans();
     var isValid = false;
     var title = getById("title").value;
     var price = parseFloat(getById("price").value);
@@ -57,8 +58,17 @@ function isAllDataValid() {
     if (ratingInput == "Please choose a rating") {
         ratingSpan.innerText = "The game rating is required!";
     }
+    else {
+        isValid = true;
+    }
     return isValid;
 }
 function getById(id) {
     return document.getElementById(id);
+}
+function clearErrorSpans() {
+    var allErrorSpans = document.querySelectorAll("span");
+    for (var i = 0; i < allErrorSpans.length; i++) {
+        allErrorSpans[i].innerHTML = "";
+    }
 }

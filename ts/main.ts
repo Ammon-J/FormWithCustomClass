@@ -64,6 +64,7 @@ function displayGame(myGame:VideoGame):void {
 }   
 
 function isAllDataValid() {
+    clearErrorSpans();
     let isValid:boolean = false;
 
     let title = (<HTMLInputElement>getById("title")).value;
@@ -87,6 +88,10 @@ function isAllDataValid() {
         ratingSpan.innerText = "The game rating is required!";
     }
 
+    else {
+        isValid = true;
+    }
+
     return isValid;
 }
 
@@ -95,3 +100,9 @@ function getById(id:string) {
 }
 
 // Creat clearerrorSpans() function;
+function clearErrorSpans() {
+    let allErrorSpans = document.querySelectorAll("span");
+    for (let i = 0; i < allErrorSpans.length; i++) {
+        allErrorSpans[i].innerHTML = "";
+    }
+}
