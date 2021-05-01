@@ -29,7 +29,6 @@ function getVideoGame():VideoGame {
 
     let digitalonly = <HTMLInputElement>getById("online");
     game.isDigitalOnly = digitalonly.checked;
-    console.log(game);
     return game;
 }
 
@@ -65,9 +64,34 @@ function displayGame(myGame:VideoGame):void {
 }   
 
 function isAllDataValid() {
-    return true;
+    let isValid:boolean = false;
+
+    let title = (<HTMLInputElement>getById("title")).value;
+    let price = parseFloat((<HTMLInputElement>getById("price")).value);
+    let ratingInput = (<HTMLSelectElement>getById("rating")).value;
+    let titleSpan = <HTMLElement>getById("title-span");
+    let priceSpan = <HTMLElement>getById("price-span");
+    let ratingSpan = <HTMLElement>getById("rating-span");
+
+    if(title == "") {
+        titleSpan.innerText = "Game title is required!";
+        isValid = false;
+    }
+
+    if(isNaN(price)) {
+        priceSpan.innerText = "Price must be a number!";
+        isValid = false;
+    }
+
+    if(ratingInput == "Please choose a rating") {
+        ratingSpan.innerText = "The game rating is required!";
+    }
+
+    return isValid;
 }
 
 function getById(id:string) {
     return document.getElementById(id);
 }
+
+// Creat clearerrorSpans() function;

@@ -17,7 +17,6 @@ function getVideoGame() {
     game.rating = ratingInput.value;
     var digitalonly = getById("online");
     game.isDigitalOnly = digitalonly.checked;
-    console.log(game);
     return game;
 }
 function addVideoGame() {
@@ -40,7 +39,25 @@ function displayGame(myGame) {
     displayDiv.appendChild(GameInfo);
 }
 function isAllDataValid() {
-    return true;
+    var isValid = false;
+    var title = getById("title").value;
+    var price = parseFloat(getById("price").value);
+    var ratingInput = getById("rating").value;
+    var titleSpan = getById("title-span");
+    var priceSpan = getById("price-span");
+    var ratingSpan = getById("rating-span");
+    if (title == "") {
+        titleSpan.innerText = "Game title is required!";
+        isValid = false;
+    }
+    if (isNaN(price)) {
+        priceSpan.innerText = "Price must be a number!";
+        isValid = false;
+    }
+    if (ratingInput == "Please choose a rating") {
+        ratingSpan.innerText = "The game rating is required!";
+    }
+    return isValid;
 }
 function getById(id) {
     return document.getElementById(id);
