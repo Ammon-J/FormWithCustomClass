@@ -14,36 +14,35 @@
 </head>
 <body>
     <h1>Add Video Games</h1>
-    <div id="validation-summery">
-        <p>Errors go here...</p>
-    </div>
 
-    <form>
-        <label for="title" class="title-box">Title: </label>
-        <input type="text" id="title"> 
-        <span id="title-span"></span>
-        <br> <br>
-        <label for="price" class="price-box">Price: </label>
-        <input type="text"id="price"> 
-        <span id="price-span"></span>
-        <br> <br>
-        <label for="rating" class="rating">Rating: </label>
-        <select id="rating"> 
-            <option>Please choose a rating</option>
-            <option>E</option>
-            <option>m</option>
-            <option>T</option>
-        </select>
-        <span id="rating-span"></span>
-        <br>
-        <label for="online">Online Only?</label>
-        <input type="checkbox" id="online">
-        <br>
-        <br>
-        <input type="button" value="Add New Video Game">
-    </form>
+        <form>
+            <label for="title" class="title-box">Title: </label>
+            <input type="text" id="title"> 
+            <span id="title-span"></span>
+            <br> <br>
+            <label for="price" class="price-box">Price: </label>
+            <input type="text"id="price"> 
+            <span id="price-span"></span>
+            <br> <br>
+            <label for="rating" class="rating">Rating: </label>
+            <select id="rating"> 
+                <option>Please choose a rating</option>
+                <option>E</option>
+                <option>M</option>
+                <option>T</option>
+            </select>
+            <span id="rating-span"></span>
+            <br>
+            <label for="online">Online Only?</label>
+            <input type="checkbox" id="online">
+            <br>
+            <br>
+            <input type="button" value="Add New Video Game">
+        </form>
 
-    <div id="display">
+    <div data-aos="fade-right">
+        <div id="display" class="display">
+        </div>
     </div>
 
     <script src="js/main.js"></script>

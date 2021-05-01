@@ -61,6 +61,9 @@ function displayGame(myGame:VideoGame):void {
 
     // Add <p> game info
     displayDiv.appendChild(GameInfo);
+
+    // Call the animation for AOS js library
+    AOS.init();
 }   
 
 function isAllDataValid() {

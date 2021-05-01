@@ -37,6 +37,7 @@ function displayGame(myGame) {
     }
     GameInfo.innerText = myGame.title + " has a rating of " + myGame.rating + ". It costs $" + myGame.price.toFixed(2) + ". \n    It is " + gameMediumDisplay + " digital only.";
     displayDiv.appendChild(GameInfo);
+    AOS.init();
 }
 function isAllDataValid() {
     clearErrorSpans();
