@@ -202,12 +202,11 @@ input[type=button] {
     }
 
     .display {
-        margin-top: 5%;
-        margin-bottom: 8%;
-        border: .1em solid azure;
-        padding-left: 1%;
-        width: 95%;
+        display: block;
+        width: fit-content;
+        margin-left: 50%;
+        margin-top: 2%;
         background-color: rgb(0, 0, 0);
-        background-color: rgba(0,0,0, 0.7);
+        background-color: rgba(0,0,0, 0.8);
     }
 }
